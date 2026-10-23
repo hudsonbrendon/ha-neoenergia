@@ -88,6 +88,21 @@ no login real (abaixo).
   e_resultado, retorno{id,tipo,numero,mensagem}}`.
 - Bandeira: `{tipo, cor, mensagem, mesReferencia}`.
 
+## App Android `br.com.neoenergia.app` v1.4.4 (puxado do celular via ADB)
+
+- É um app **Capacitor/Ionic**: o código está em `assets/public/main.*.js`.
+- Hosts mobile: `mobileapineprd.neoenergia.com` (API) e
+  `mobileapineanl.neoenergia.com/areanaologada` (área não logada). Canal `ACA`
+  no login; `AEA`/`AEI` por plataforma.
+- Login: `recaptchaService.getToken()` → `POST {anl}/2.0.0/autentica`
+  `{canalSolicitante:"ACA", usuario, senha, recaptcha}`. É **o mesmo reCAPTCHA v3**
+  do site (site key `6LcEXMspAAAAAM8Fc_0Vwh0vLjPh9-A_qAs-awid`).
+- O app guarda CPF/senha localmente e, no login automático e na biometria,
+  **chama `signIn` de novo com um token novo do reCAPTCHA**. Nas distribuidoras
+  NE (Cosern/Coelba/Celpe) não há refresh token. O modelo OAuth com
+  `refresh_token` só é usado no ramo Elektro.
+- Conclusão: o app também não oferece um caminho sem captcha para a Cosern.
+
 ## Status
 
 Mapa de endpoints e formatos: documentados. **Integração headless: bloqueada
