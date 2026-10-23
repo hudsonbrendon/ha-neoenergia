@@ -47,9 +47,7 @@ canal (todos terminam em `a`, sinal de ofuscação):
 
 **Porém o gateway de produção responde `invalid_client` para todos** (testado via
 form e via Basic auth no `/token`). Ou seja, esses valores são transformados/
-decifrados em runtime antes do request. A credencial real precisa ser **capturada
-de um login verdadeiro** — veja `scripts/capturar_credencial.py`. Depois,
-informe `client_id`/`client_secret` nos campos avançados da integração.
+decifrados em runtime antes do request. O motivo apareceu no login real: o site nem usa esse fluxo (ver "Achado após login real").
 
 ## Endpoints (de `environment.endpoints`, caso NE celpe/coelba/cosern)
 

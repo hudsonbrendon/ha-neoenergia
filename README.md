@@ -42,9 +42,7 @@ Atualização a cada 6 h (cloud polling).
 ## Status
 
 - ✅ Auth OAuth2 e mapa de endpoints: completos (RE do SPA).
-- ⏳ Credencial real do gateway + shapes exatos de resposta: dependem de 1
-  captura de login (`scripts/capturar_credencial.py`). Os sensores leem os
-  campos de forma tolerante e serão afinados após a captura.
+- ⛔ Login headless: bloqueado pelo reCAPTCHA v3 (não contornado).
 
 ## Desenvolvimento
 

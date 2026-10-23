@@ -10,13 +10,9 @@ Engenharia reversa do web app Angular `agenciavirtual.neoenergia.com`:
 - Mapa de endpoints (de `environment.endpoints`): UCs, faturas, histórico de
   consumo, minha-conta, débitos, bandeira tarifária, autoleitura.
 
-⚠️ IMPORTANTE (credencial do gateway): os `client_id`/`client_secret` abaixo
-vieram do bundle estático, mas o gateway de produção respondeu `invalid_client`
-para eles — provavelmente são decifrados em runtime. Rode
-`scripts/capturar_credencial.py` (ou um login real) para capturar o
-`client_id`/`client_secret` reais e informe-os na configuração (campos avançados)
-ou substitua as constantes aqui. Enquanto isso, o login falhará com
-`invalid_client`.
+⚠️ O login real do site é `POST {hostanl}/areanaologada/2.0.0/autentica`, que
+exige reCAPTCHA v3. Este cliente não contorna o captcha, então o login falha.
+Ver REVERSE_ENGINEERING.md.
 """
 
 from __future__ import annotations
