@@ -69,9 +69,8 @@ Base `${host}` = `https://apineprd.neoenergia.com`.
 | autoleitura | `…/servicos/autoleitura/ucs/{uc}` | autoleitura |
 | boleto-unico, pix, pagamentos, protocolo, religação, débito-automático, ligação-nova, troca-titularidade, tarifa-social, ouvidoria … | vários | referência |
 
-Shapes de resposta (campos de fatura/UC/consumo) são inferidos e marcados para
-ajuste — confirmar com a captura real (`scripts/capturar_credencial.py` também
-coleta as URLs/respostas pós-login).
+Shapes de fatura/consumo seguem inferidos; UCs e bandeira foram confirmados
+no login real (abaixo).
 
 ## Achado após login real (23/10/2026)
 

@@ -28,7 +28,7 @@ Caminhos legítimos para ter os dados no HA:
 1. HACS → repositórios customizados → `hudsonbrendon/ha-neoenergia` (Integration).
 2. Instale e reinicie o Home Assistant.
 3. Adicionar Integração → **Neoenergia** → informe CPF/CNPJ, senha, distribuidora
-   (**cosern** para RN) e, se já capturou, `client_id`/`client_secret`.
+   (**cosern** para RN) (o login vai falhar por causa do reCAPTCHA, veja acima).
 
 ## Entidades (um dispositivo por UC)
 
