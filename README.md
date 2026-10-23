@@ -10,19 +10,18 @@ Feita por engenharia reversa da **Agência Virtual** web
 
 > Projeto pessoal, sem vínculo com a Neoenergia. Use com a sua própria conta.
 
-## ⚠️ Antes de usar: credencial do gateway
+## ⚠️ Status: login protegido por reCAPTCHA
 
-O login é OAuth2 (CPF/CNPJ + senha da Agência Virtual), mas o gateway WSO2 exige
-um `client_id`/`client_secret` de cliente OAuth. Os valores achados no código do
-site estão **ofuscados** e o servidor os recusa (`invalid_client`). Você precisa
-**capturar os reais** uma vez:
+A Agência Virtual exige **reCAPTCHA v3** no login (`/areanaologada/2.0.0/autentica`)
+e devolve um token de 1 h sem refresh. Esta integração **não contorna o captcha**,
+então hoje ela não consegue logar sozinha. O código fica como referência do
+mapa de API (ver `REVERSE_ENGINEERING.md`).
 
-1. Com o `browser-harness` instalado, rode o conteúdo de
-   `scripts/capturar_credencial.py` e faça login na Agência Virtual quando pedido.
-   Ele imprime `client_id`/`client_secret` reais (sua senha é redigida).
-2. Informe esses dois valores nos campos avançados ao adicionar a integração.
-
-Sem isso, o login falha com "invalid_auth / invalid_client".
+Caminhos legítimos para ter os dados no HA:
+- **Fatura digital por e-mail** + integração IMAP do HA (valor/vencimento a
+  partir do e-mail da Cosern).
+- **RE do app Android** `br.com.neoenergia.app`, puxado do seu celular via ADB,
+  que pode usar outro mecanismo de auth.
 
 ## Instalação (HACS)
 

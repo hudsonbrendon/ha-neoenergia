@@ -73,8 +73,25 @@ Shapes de resposta (campos de fatura/UC/consumo) são inferidos e marcados para
 ajuste — confirmar com a captura real (`scripts/capturar_credencial.py` também
 coleta as URLs/respostas pós-login).
 
+## Achado após login real (23/10/2026)
+
+- O login de verdade **não** é o OAuth password grant do `LoginDTO`. O site faz
+  `POST {hostanl}/areanaologada/2.0.0/autentica` com JSON
+  `{usuario, senha, canalSolicitante: "AGU", recaptcha}`, e quem responde é um
+  BFF que faz o OAuth do lado do servidor com o próprio client (o `azp` do JWT é
+  `XglvQJfHEWsQCK8li2urGlwf_EEa`, que não aparece no bundle). A resposta é
+  `{token: {ne, se}}`, um access token JWT RS256 por região.
+- **O servidor exige reCAPTCHA v3** (`O parâmetro 'recaptcha' é obrigatório` /
+  `Invalid Captcha`). O token vale 1 h e **não tem refresh_token**.
+- Por isso não dá pra ter uma integração headless contínua sem contornar o
+  captcha, e isso não foi feito de propósito.
+- Formato confirmado de `clientes/{doc}/ucs`: `{ucs:[{status, uc, codigoUcAneel,
+  nomeCliente, instalacao, local{endereco,bairro,municipio,cep,uf},
+  enderecoEntrega{…}, grupoTensao, contrato, dt_inicio, dt_fim, …}],
+  e_resultado, retorno{id,tipo,numero,mensagem}}`.
+- Bandeira: `{tipo, cor, mensagem, mesReferencia}`.
+
 ## Status
 
-Auth e mapa de endpoints: **completos**. Credencial do gateway e shapes exatos:
-**pendentes de 1 captura de login**. A integração está pronta para funcionar
-assim que o `client_id`/`client_secret` reais forem informados.
+Mapa de endpoints e formatos: documentados. **Integração headless: bloqueada
+pelo reCAPTCHA v3 no login.** Os caminhos legítimos estão no README.
