@@ -1,0 +1,12 @@
+{
+  "domain": "neoenergia",
+  "name": "Neoenergia (Cosern/Coelba/Celpe)",
+  "codeowners": ["@hudsonbrendon"],
+  "config_flow": true,
+  "documentation": "https://github.com/hudsonbrendon/ha-neoenergia",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/hudsonbrendon/ha-neoenergia/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

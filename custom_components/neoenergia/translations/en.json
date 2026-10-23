@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Neoenergia",
+        "description": "Neoenergia Agência Virtual CPF/CNPJ and password. Pick the distributor (Cosern = RN). client_id/secret only if you captured the real ones (see README).",
+        "data": {
+          "documento": "CPF/CNPJ",
+          "password": "Password",
+          "distribuidora": "Distributor",
+          "client_id": "gateway client_id (optional)",
+          "client_secret": "gateway client_secret (optional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect.",
+      "invalid_auth": "Invalid document/password, or invalid gateway client_id — see README.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This account/distributor is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "fatura": {
+        "name": "Current bill"
+      },
+      "consumo": {
+        "name": "Consumption"
+      },
+      "bandeira": {
+        "name": "Tariff flag"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Neoenergia",
+        "description": "CPF/CNPJ e senha da Agência Virtual Neoenergia. Escolha a distribuidora (Cosern = RN). client_id/secret só se você capturou os reais (veja o README).",
+        "data": {
+          "documento": "CPF/CNPJ",
+          "password": "Senha",
+          "distribuidora": "Distribuidora",
+          "client_id": "client_id do gateway (opcional)",
+          "client_secret": "client_secret do gateway (opcional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Falha ao conectar.",
+      "invalid_auth": "Documento/senha inválidos, ou credencial do gateway (client_id) inválida — veja o README.",
+      "unknown": "Erro inesperado."
+    },
+    "abort": {
+      "already_configured": "Essa conta/distribuidora já está configurada."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "fatura": {
+        "name": "Fatura atual"
+      },
+      "consumo": {
+        "name": "Consumo"
+      },
+      "bandeira": {
+        "name": "Bandeira tarifária"
+      }
+    }
+  }
+}
