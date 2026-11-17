@@ -1,4 +1,17 @@
+<p align="center">
+  <img src="custom_components/neoenergia/brand/logo@2x.png" alt="Neoenergia (Cosern/Coelba/Celpe)" height="128">
+</p>
+
 # Neoenergia (Cosern / Coelba / Celpe) — Home Assistant
+
+[![Tests](https://github.com/hudsonbrendon/ha-neoenergia/actions/workflows/tests.yml/badge.svg)](https://github.com/hudsonbrendon/ha-neoenergia/actions/workflows/tests.yml)
+[![Hassfest](https://github.com/hudsonbrendon/ha-neoenergia/actions/workflows/hassfest.yml/badge.svg)](https://github.com/hudsonbrendon/ha-neoenergia/actions/workflows/hassfest.yml)
+[![HACS](https://github.com/hudsonbrendon/ha-neoenergia/actions/workflows/validate.yml/badge.svg)](https://github.com/hudsonbrendon/ha-neoenergia/actions/workflows/validate.yml)
+[![Release](https://img.shields.io/github/v/release/hudsonbrendon/ha-neoenergia?sort=semver)](https://github.com/hudsonbrendon/ha-neoenergia/releases)
+[![Downloads](https://img.shields.io/github/downloads/hudsonbrendon/ha-neoenergia/total)](https://github.com/hudsonbrendon/ha-neoenergia/releases)
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/)
+[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024.6.0%2B-18BCF2?logo=homeassistant&logoColor=white)](https://www.home-assistant.io/)
+[![License](https://img.shields.io/github/license/hudsonbrendon/ha-neoenergia)](LICENSE)
 
 Integração não-oficial que traz os dados da sua conta de energia **Neoenergia**
 — incluindo a **Cosern** (Rio Grande do Norte) — para o Home Assistant: faturas,
@@ -24,6 +37,9 @@ Caminhos legítimos para ter os dados no HA:
   que pode usar outro mecanismo de auth.
 
 ## Instalação (HACS)
+
+[![Abrir no HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=hudsonbrendon&repository=ha-neoenergia&category=integration)
+[![Adicionar integração](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=neoenergia)
 
 1. HACS → repositórios customizados → `hudsonbrendon/ha-neoenergia` (Integration).
 2. Instale e reinicie o Home Assistant.

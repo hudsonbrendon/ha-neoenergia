@@ -21,6 +21,6 @@ class NeoenergiaUCEntity(CoordinatorEntity[NeoenergiaDataUpdateCoordinator]):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, uc)},
             manufacturer="Neoenergia",
-            model=coordinator.client._distribuidora.upper(),  # noqa: SLF001
+            model=coordinator.client._distribuidora.upper(),
             name=f"Neoenergia UC {uc}",
         )
